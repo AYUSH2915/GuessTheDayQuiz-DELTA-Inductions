@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     Vibrator vibrator2;
     Vibrator vibrator3;
     Vibrator vibrator4;
+    Vibrator vibrator5;
     private TextView textView;
     private  TextView textView1;
     Random random = new Random();
@@ -157,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
         vibrator2 = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         vibrator3 = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         vibrator4 = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+        vibrator5 = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         if (r == f || r == t || f == t) {
             r = 3;
             f = 4;
@@ -185,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
                         green();
                         textView = findViewById(R.id.textView3);
                         textView.setText("Your Score Is = " + scr);
-                        Toast.makeText(MainActivity.this, "CORRECT ANSWER", Toast.LENGTH_SHORT).show();
+
                     }
 
                 } else {
@@ -198,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
                         count = count + 1;
                         textView = findViewById(R.id.textView3);
                         textView.setText("Your Score Is = " + scr);
-                        Toast.makeText(MainActivity.this, "INCORRECT ANSWER", Toast.LENGTH_SHORT).show();
+
                         text();
                     }
 
@@ -228,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
 
                         textView = findViewById(R.id.textView3);
                         textView.setText("Your Score Is = " + scr);
-                        Toast.makeText(MainActivity.this, "CORRECT ANSWER", Toast.LENGTH_SHORT).show();
+
                     }
 
 
@@ -242,7 +244,7 @@ public class MainActivity extends AppCompatActivity {
                         count = count + 1;
                         textView = findViewById(R.id.textView3);
                         textView.setText("Your Score Is = " + scr);
-                        Toast.makeText(MainActivity.this, "INCORRECT ANSWER", Toast.LENGTH_SHORT).show();
+
                         text();
                     }
                 }
@@ -270,7 +272,7 @@ public class MainActivity extends AppCompatActivity {
                         green();
                         textView = findViewById(R.id.textView3);
                         textView.setText("Your Score Is = " + scr);
-                        Toast.makeText(MainActivity.this, "CORRECT ANSWER", Toast.LENGTH_SHORT).show();
+
                     }
 
 
@@ -284,7 +286,7 @@ public class MainActivity extends AppCompatActivity {
                         count = count + 1;
                         textView = findViewById(R.id.textView3);
                         textView.setText("Your Score Is = " + scr);
-                        Toast.makeText(MainActivity.this, "INCORRECT ANSWER", Toast.LENGTH_SHORT).show();
+
                         text();
                     }
 
@@ -301,6 +303,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                vibrator4.vibrate(500);
                 st1 = "NONE";
                 if ((ct == 0) && (arr[t] != str) && (arr[f] != str) && (arr[r] != str)) {
                     if ((x == a1) && (n == STR2)) {
@@ -308,12 +311,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                     if ((x != a1) || (n != STR2)) {
                         scr = scr + 1;
-                        vibrator4.vibrate(500);
+
                         green();
 
                         textView = findViewById(R.id.textView3);
                         textView.setText("Your Score Is = " + scr);
-                        Toast.makeText(MainActivity.this, "CORRECT ANSWER", Toast.LENGTH_SHORT).show();
+
                     }
 
 
@@ -328,7 +331,7 @@ public class MainActivity extends AppCompatActivity {
                         count = count + 1;
                         textView = findViewById(R.id.textView3);
                         textView.setText("Your Score Is = " + scr);
-                        Toast.makeText(MainActivity.this, "INCORRECT ANSWER", Toast.LENGTH_SHORT).show();
+                        
                         text();
                     }
                     STR2 = n;
@@ -344,6 +347,8 @@ public class MainActivity extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                vibrator5.vibrate(500);
+
                 x = a1;
                 n = STR2;
                 white();
